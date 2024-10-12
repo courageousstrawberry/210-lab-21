@@ -191,13 +191,17 @@ int main()
 {
     srand(time(0));
     DoublyLinkedList list;
+    // Create a random size for the linked list.
     int size = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
+    // Add a random Goat object to the linked list.
     for (int i = 0; i < size; ++i)
         list.push_back(Goat());
+    // Print the list foward and backward.
     cout << "List forward: " << endl;
     list.print();
     cout << "List backward: " << endl;
     list.print_reverse();
+    // Delete the list and check that it successfully deleted.
     cout << "Deleting list, then trying to print.\n";
     list.~DoublyLinkedList();
     cout << "List forward: ";
