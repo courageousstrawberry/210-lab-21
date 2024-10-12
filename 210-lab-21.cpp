@@ -19,7 +19,16 @@ private:
                          "Gray", "Cyan", "Magenta", "Lime", "Teal"};
 public:
     Goat() {
+        // Randomly generate the age, name, and color.
         srand(time(0));
+        age = rand() % 20 + 1;
+        name = names[rand() % 15];
+        color = colors[rand() % 15];
+    }
+    Goat(int a, string n, string c) {
+        age = a;
+        name = n;
+        color = c;
     }
 };
 
