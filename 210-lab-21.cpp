@@ -194,9 +194,9 @@ int main()
     int size = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
     for (int i = 0; i < size; ++i)
         list.push_back(Goat());
-    cout << "List forward: ";
+    cout << "List forward: " << endl;
     list.print();
-    cout << "List backward: ";
+    cout << "List backward: " << endl;
     list.print_reverse();
     cout << "Deleting list, then trying to print.\n";
     list.~DoublyLinkedList();
