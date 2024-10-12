@@ -128,7 +128,9 @@ public:
         if (!head)
             return; // Empty list
         Node *temp = head;
-        while (temp && !(temp->data.get_age() == value.age && temp->data.name == value.name && temp->data.color == value.color))
+        while (temp && !(temp->data.get_age() == value.get_age() 
+            && temp->data.get_name() == value.get_name() 
+            && temp->data.get_color() == value.get_color()))
             temp = temp->next;
         if (!temp)
             return; // Value not found
