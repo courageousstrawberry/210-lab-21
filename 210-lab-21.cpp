@@ -20,7 +20,6 @@ private:
 public:
     Goat() {
         // Randomly generate the age, name, and color.
-        srand(time(0));
         age = rand() % 20 + 1;
         name = names[rand() % 15];
         color = colors[rand() % 15];
@@ -148,7 +147,7 @@ public:
             return;
         while (current)
         {
-            cout << current->data << " ";
+            current->data.display();
             current = current->next;
         }
         cout << endl;
@@ -160,7 +159,7 @@ public:
             return;
         while (current)
         {
-            cout << current->data << " ";
+            current->data.display();
             current = current->prev;
         }
         cout << endl;
@@ -178,10 +177,11 @@ public:
 // Driver program
 int main()
 {
+    srand(time(0));
     DoublyLinkedList list;
     int size = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
     for (int i = 0; i < size; ++i)
-        list.push_back(rand() % (MAX_NR - MIN_NR + 1) + MIN_NR);
+        list.push_back(Goat());
     cout << "List forward: ";
     list.print();
     cout << "List backward: ";
