@@ -32,6 +32,16 @@ public:
     void display() const {
         cout << name << " (" << color << ", " << age << ")" <<endl;
     }
+    // Get member functions
+    int get_age() {
+        return age;
+    }
+    string get_name() {
+        return name;
+    }
+    string get_color() {
+        return color;
+    }
 };
 
 class DoublyLinkedList
@@ -118,7 +128,7 @@ public:
         if (!head)
             return; // Empty list
         Node *temp = head;
-        while (temp && temp->data != value)
+        while (temp && !(temp->data.get_age() == value.age && temp->data.name == value.name && temp->data.color == value.color))
             temp = temp->next;
         if (!temp)
             return; // Value not found
