@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -15,6 +17,10 @@ private:
     string colors[15] = {"Red", "Blue", "Green", "Yellow", "Purple", 
                          "Orange", "Pink", "Brown", "Black", "White", 
                          "Gray", "Cyan", "Magenta", "Lime", "Teal"};
+public:
+    Goat() {
+        srand(time(0));
+    }
 };
 
 class DoublyLinkedList
